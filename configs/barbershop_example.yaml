@@ -1,0 +1,121 @@
+# ============================================================
+# Конфигурация компании: "Barbershop Brutus"
+# ============================================================
+name: "Barbershop Brutus"
+tagline: "Мужской стиль — без компромиссов"
+emoji: "✂️"
+
+address: "г. Санкт-Петербург, пр. Невский, д. 87"
+phone: "+7 (812) 456-78-90"
+instagram: "@brutus_barber_spb"
+website: "https://brutus-barber.ru"
+maps_link: "https://yandex.ru/maps/?ll=30.3141,59.9311"
+
+working_days:
+  - mon
+  - tue
+  - wed
+  - thu
+  - fri
+  - sat
+  - sun
+
+working_hours:
+  default:
+    start: "09:00"
+    end: "21:00"
+  sun:
+    start: "10:00"
+    end: "18:00"
+
+slot_duration_minutes: 30
+
+masters:
+  - id: "igor"
+    name: "Игорь Стрижов"
+    specialty: "Классические стрижки, бритьё"
+    enabled: true
+
+  - id: "maksim"
+    name: "Максим Рей"
+    specialty: "Фейды, дизайн бороды"
+    enabled: true
+
+categories:
+  - id: "haircut"
+    name: "Стрижки"
+    emoji: "✂️"
+    services:
+      - id: "cut_classic"
+        name: "Классическая стрижка"
+        price_min: 1200
+        duration_minutes: 45
+        description: "Стрижка ножницами с оформлением"
+        enabled: true
+
+      - id: "cut_machine"
+        name: "Стрижка машинкой"
+        price_min: 900
+        duration_minutes: 30
+        description: "Быстрая стрижка машинкой"
+        enabled: true
+
+      - id: "cut_fade"
+        name: "Фейд (Fade)"
+        price_min: 1500
+        duration_minutes: 60
+        description: "Модный градиентный переход"
+        enabled: true
+
+      - id: "cut_kid"
+        name: "Детская стрижка"
+        price_min: 800
+        duration_minutes: 30
+        description: "Для мальчиков до 12 лет"
+        enabled: true
+
+  - id: "beard"
+    name: "Борода"
+    emoji: "🧔"
+    services:
+      - id: "beard_trim"
+        name: "Оформление бороды"
+        price_min: 600
+        duration_minutes: 30
+        description: "Коррекция и укладка"
+        enabled: true
+
+      - id: "beard_shave"
+        name: "Бритьё опасной бритвой"
+        price_min: 900
+        duration_minutes: 40
+        description: "Классическое бритьё с горячим полотенцем"
+        enabled: true
+
+  - id: "combo"
+    name: "Комплексы"
+    emoji: "💈"
+    services:
+      - id: "combo_full"
+        name: "Стрижка + борода"
+        price_min: 1700
+        price_max: 2000
+        duration_minutes: 80
+        description: "Комплексный уход — выгоднее на 15%"
+        enabled: true
+
+features:
+  master_selection: true
+  reviews: false
+  pricelist_sort: false
+  pricelist_filter: false
+
+texts:
+  welcome: |
+    {emoji} <b>{name}</b>
+
+    {tagline}
+
+    Выберите раздел:
+  reviews_text: ""
+  reviews_url: ""

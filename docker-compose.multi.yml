@@ -1,0 +1,44 @@
+# docker-compose.multi.yml
+# Launch multiple bots (for multiple companies) simultaneously
+version: "3.9"
+
+services:
+  beauty_bot:
+    build: .
+    container_name: beauty_studio_bot
+    restart: unless-stopped
+    environment:
+      BOT_TOKEN: "${BEAUTY_BOT_TOKEN}"
+      COMPANY_CONFIG: "configs/beauty_studio.yaml"
+      DATABASE_URL: "sqlite+aiosqlite:///./data/beauty.db"
+      ADMIN_IDS: "${BEAUTY_ADMIN_IDS}"
+      NOTIFY_CHAT_ID: "${BEAUTY_NOTIFY_CHAT_ID}"
+      TZ: "Europe/Moscow"
+      REMINDER_HOURS: "2"
+    volumes:
+      - ./data/beauty:/app/data
+      - ./configs:/app/configs
+    networks:
+      - bots_net
+
+  barbershop_bot:
+    build: .
+    container_name: barbershop_bot
+    restart: unless-stopped
+    environment:
+      BOT_TOKEN: "${BARBER_BOT_TOKEN}"
+      COMPANY_CONFIG: "configs/barbershop_example.yaml"
+      DATABASE_URL: "sqlite+aiosqlite:///./data/barber.db"
+      ADMIN_IDS: "${BARBER_ADMIN_IDS}"
+      NOTIFY_CHAT_ID: "${BARBER_NOTIFY_CHAT_ID}"
+      TZ: "Europe/Moscow"
+      REMINDER_HOURS: "3"
+    volumes:
+      - ./data/barber:/app/data
+      - ./configs:/app/configs
+    networks:
+      - bots_net
+
+networks:
+  bots_net:
+    driver: bridge

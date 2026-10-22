@@ -1,0 +1,38 @@
+[tool.poetry]
+name = "booking-bot"
+version = "1.0.0"
+description = "Telegram booking bot boilerplate for service businesses"
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+python = "^3.11"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+aiogram = "^3.13"
+sqlalchemy = {extras = ["asyncio"], version = "^2.0"}
+aiosqlite = "^0.20"
+asyncpg = "^0.30"
+pyyaml = "^6.0"
+apscheduler = "^3.10"
+python-dotenv = "^1.0"
+alembic = "^1.13"
+Pillow = "^10.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0"
+pytest-asyncio = "^0.23"
+black = "^24.0"
+ruff = "^0.4"
+mypy = "^1.10"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.black]
+line-length = 100
+target-version = ["py311"]

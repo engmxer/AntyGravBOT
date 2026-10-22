@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+*.egg-info/
+dist/
+build/
+
+# Environment
+.env
+!.env.example
+
+# Database
+data/
+*.db
+*.sqlite
+
+# Logs
+logs/
+*.log
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Docker
+.dockerignore
+
+# Alembic
+alembic/versions/*.py
+!alembic/versions/.gitkeep

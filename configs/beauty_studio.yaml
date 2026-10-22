@@ -1,0 +1,191 @@
+# ============================================================
+# Конфигурация компании: "Nail Studio Bloom"
+# ============================================================
+name: "Nail Studio Bloom"
+tagline: "Ваш идеальный маникюр — рядом"
+emoji: "💅"
+
+# Контактная информация
+address: "г. Москва, ул. Арбат, д. 15, оф. 3"
+phone: "+7 (999) 123-45-67"
+instagram: "@bloom_nails_msk"
+website: "https://bloom-nails.ru"
+maps_link: "https://yandex.ru/maps/?ll=37.5897,55.7494"
+
+# Рабочие дни: mon, tue, wed, thu, fri, sat, sun
+working_days:
+  - mon
+  - tue
+  - wed
+  - thu
+  - fri
+  - sat
+
+# Часы работы (можно задать для каждого дня или "default")
+working_hours:
+  default:
+    start: "10:00"
+    end: "20:00"
+    break_start: "13:00"
+    break_end: "14:00"
+  sat:
+    start: "10:00"
+    end: "18:00"
+
+# Длительность одного слота в минутах (шаг в сетке расписания)
+slot_duration_minutes: 30
+
+# ============================================================
+# Мастера
+# ============================================================
+masters:
+  - id: "anna"
+    name: "Анна Смирнова"
+    specialty: "Маникюр, педикюр"
+    enabled: true
+
+  - id: "maria"
+    name: "Мария Петрова"
+    specialty: "Ногтевой дизайн, гель-лак"
+    enabled: true
+
+  - id: "elena"
+    name: "Елена Козлова"
+    specialty: "Классический и аппаратный педикюр"
+    enabled: true
+
+# ============================================================
+# Каталог услуг
+# ============================================================
+categories:
+  - id: "manicure"
+    name: "Маникюр"
+    emoji: "💅"
+    services:
+      - id: "man_classic"
+        name: "Классический маникюр"
+        price_min: 800
+        duration_minutes: 60
+        description: "Обработка кутикулы, форма, покрытие по желанию"
+        enabled: true
+
+      - id: "man_gel"
+        name: "Гель-лак"
+        price_min: 1200
+        price_max: 1500
+        duration_minutes: 90
+        description: "Долгосрочное покрытие, держится 3–4 недели"
+        enabled: true
+
+      - id: "man_strengthen"
+        name: "Укрепление ногтей"
+        price_min: 1500
+        duration_minutes: 90
+        description: "Акрил или биогель для укрепления натуральных ногтей"
+        enabled: true
+
+      - id: "man_extension"
+        name: "Наращивание ногтей"
+        price_min: 2500
+        price_max: 3500
+        duration_minutes: 150
+        description: "Акрил или гель, любая форма и длина"
+        enabled: true
+
+      - id: "man_design"
+        name: "Дизайн ногтей"
+        price_min: 300
+        price_max: 1000
+        duration_minutes: 30
+        description: "Градиент, стемпинг, рисунки, стразы (за ноготь или набор)"
+        enabled: true
+
+  - id: "pedicure"
+    name: "Педикюр"
+    emoji: "🦶"
+    services:
+      - id: "ped_classic"
+        name: "Классический педикюр"
+        price_min: 1500
+        duration_minutes: 90
+        description: "Полная обработка стоп, кутикулы, покрытие по желанию"
+        enabled: true
+
+      - id: "ped_hardware"
+        name: "Аппаратный педикюр"
+        price_min: 2000
+        duration_minutes: 75
+        description: "Фрезой — без воды, бережная обработка"
+        enabled: true
+
+      - id: "ped_combined"
+        name: "Комбинированный педикюр"
+        price_min: 2200
+        duration_minutes: 100
+        description: "Ванночка + аппаратная обработка"
+        enabled: true
+
+      - id: "ped_gel"
+        name: "Педикюр + гель-лак"
+        price_min: 2500
+        duration_minutes: 120
+        description: "Педикюр с долгосрочным покрытием"
+        enabled: true
+
+  - id: "care"
+    name: "Уход за руками"
+    emoji: "🧴"
+    services:
+      - id: "care_paraffin"
+        name: "Парафинотерапия рук"
+        price_min: 500
+        duration_minutes: 30
+        description: "Питание и увлажнение кожи рук"
+        enabled: true
+
+      - id: "care_spa"
+        name: "SPA-маникюр"
+        price_min: 1800
+        duration_minutes: 90
+        description: "Маникюр + скраб + маска + массаж рук"
+        enabled: true
+
+      - id: "care_removal"
+        name: "Снятие покрытия"
+        price_min: 300
+        price_max: 500
+        duration_minutes: 30
+        description: "Снятие гель-лака или акрила"
+        enabled: true
+
+# ============================================================
+# Функциональные флаги
+# ============================================================
+features:
+  master_selection: true      # Показывать выбор мастера
+  reviews: true               # Показывать раздел "Отзывы"
+  pricelist_sort: false       # Сортировка прайса (в разработке)
+  pricelist_filter: false     # Фильтрация прайса
+
+# ============================================================
+# Тексты (кастомизируемые шаблоны)
+# ============================================================
+texts:
+  welcome: |
+    {emoji} <b>Добро пожаловать в {name}!</b>
+
+    {tagline}
+
+    Выберите нужный раздел:
+
+  reviews_text: |
+    ⭐ <b>Отзывы наших клиентов</b>
+
+    Мы рады каждому клиенту и стараемся сделать вашу жизнь чуточку красивее 💖
+    Читайте отзывы или оставьте свой:
+
+  reviews_url: "https://yandex.ru/maps/org/bloom_nails/reviews"
+
+  booking_reminder: |
+    ⏰ Напоминание: через {hours} ч. у вас запись в {name}!
+    Услуга: {service} в {time}

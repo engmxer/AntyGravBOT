@@ -1,0 +1,37 @@
+version: "3.9"
+
+services:
+  bot:
+    build: .
+    container_name: booking_bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data          # SQLite database persistence
+      - ./configs:/app/configs    # Company configs (mount for easy updates)
+    environment:
+      - PYTHONUNBUFFERED=1
+    networks:
+      - bot_net
+
+  # Uncomment for PostgreSQL production setup:
+  # postgres:
+  #   image: postgres:16-alpine
+  #   container_name: booking_postgres
+  #   restart: unless-stopped
+  #   environment:
+  #     POSTGRES_DB: booking_db
+  #     POSTGRES_USER: botuser
+  #     POSTGRES_PASSWORD: securepassword
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+  #   networks:
+  #     - bot_net
+
+networks:
+  bot_net:
+    driver: bridge
+
+# volumes:
+#   postgres_data:
